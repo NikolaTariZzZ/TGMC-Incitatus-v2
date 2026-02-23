@@ -103,12 +103,12 @@
 	custom_metabolism = REAGENTS_METABOLISM * 0.125
 	purge_list = list(/datum/reagent/medicine/kelotane, /datum/reagent/medicine/bicaridine)
 	purge_rate = 1
-	overdose_threshold = REAGENTS_OVERDOSE
-	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL
+	overdose_threshold = REAGENTS_OVERDOSE*2
+	overdose_crit_threshold = REAGENTS_OVERDOSE_CRITICAL*2
 	reagent_ui_priority = REAGENT_UI_UNIQUE
 
 /datum/reagent/medicine/paracetamol/on_mob_life(mob/living/L, metabolism)
-	L.reagent_pain_modifier += PAIN_REDUCTION_VERY_HEAVY
+	L.reagent_pain_modifier += PAIN_REDUCTION_HEAVY
 	L.heal_overall_damage(0.5*effect_str, 0.5*effect_str)
 	L.adjustToxLoss(-0.1*effect_str)
 	L.adjustStaminaLoss(-effect_str)
